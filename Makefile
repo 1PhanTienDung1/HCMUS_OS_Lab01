@@ -152,6 +152,7 @@ UPROGS=\
 	$U/_sync\
 	$U/_primes\
 	$U/_tree\
+	$U/_diff\
 
 fs.img: mkfs/mkfs README $(UPROGS)
 	mkfs/mkfs fs.img README $(UPROGS)
