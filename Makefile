@@ -151,6 +151,7 @@ UPROGS=\
 	$U/_dorphan\
 	$U/_sync\
 	$U/_pingpong\
+	$U/_cp\
 	$U/_primes\
 	$U/_tree\
 	$U/_diff\
