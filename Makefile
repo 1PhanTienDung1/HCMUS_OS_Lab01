@@ -153,6 +153,7 @@ UPROGS=\
 	$U/_pingpong\
 	$U/_cp\
 	$U/_sleep\
+	$U/_du\
 	$U/_primes\
 	$U/_tree\
 	$U/_diff\
