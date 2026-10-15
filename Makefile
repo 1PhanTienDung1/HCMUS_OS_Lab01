@@ -152,6 +152,7 @@ UPROGS=\
 	$U/_sync\
 	$U/_pingpong\
 	$U/_cp\
+	$U/_sleep\
 	$U/_primes\
 	$U/_tree\
 	$U/_diff\
