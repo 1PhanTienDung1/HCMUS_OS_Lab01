@@ -1,12 +1,16 @@
 #include "kernel/types.h"
 #include "user/user.h"
 
-static void fail(const char *operation){
+static void
+fail(const char *operation)
+{
   fprintf(2, "pingpong: %s failed\n", operation);
   exit(1);
 }
 
-int main(void){
+int
+main(void)
+{
   // 2 pipes
   int to_child[2];
   int to_parent[2];
@@ -14,16 +18,16 @@ int main(void){
   // create 2 pipes
   if (pipe(to_child) == -1 || pipe(to_parent) == -1)
     fail("pipe");
- // only proceed if creating successfully
+  // only proceed if creating successfully
   int pid = fork();
   if (pid == -1)
     fail("fork");
 
-  if (pid == 0){
+  if (pid == 0) {
     close(to_child[1]);
     close(to_parent[0]);
 
-    if (read(to_child[0], &byte, 1) != 1){
+    if (read(to_child[0], &byte, 1) != 1) {
       fail("read ping");
     }
     close(to_child[0]);
@@ -35,8 +39,7 @@ int main(void){
     close(to_parent[1]);
 
     exit(0);
-  } 
-  else{ 
+  } else {
     close(to_child[0]);
     close(to_parent[1]);
 
